@@ -13,5 +13,6 @@ public class Game {
     Long id;
     @ManyToMany(fetch = FetchType.EAGER)
     List<Player> players;
+    String route;
     String data;
 }

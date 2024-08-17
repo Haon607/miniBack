@@ -37,9 +37,10 @@ public class GameController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Game> setData(@PathVariable Long id, @RequestBody String data) {
+    public ResponseEntity<Game> setRouteData(@PathVariable Long id, @RequestBody String[] route_data) {
         Game game = gameRepository.findById(id).orElseThrow();
-        game.setData(data);
+        game.setRoute(route_data[0]);
+        game.setData(route_data[1]);
         gameRepository.save(game);
         return ResponseEntity.ok(game);
     }
