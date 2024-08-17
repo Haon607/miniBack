@@ -2,12 +2,16 @@ package org.example.wlback.trollers;
 
 import org.example.wlback.entities.Game;
 import org.example.wlback.entities.Player;
+import org.example.wlback.entities.questions.Answer;
+import org.example.wlback.entities.questions.QuestionFirst;
 import org.example.wlback.repos.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/api/game")
@@ -19,7 +23,38 @@ public class GameController {
 
     @PostMapping
     public ResponseEntity<Game> openGame() {
-        return ResponseEntity.status(HttpStatus.CREATED).body(gameRepository.save(new Game()));
+        return ResponseEntity.status(HttpStatus.CREATED).body(gameRepository.save(new Game(null, null, "/idle", null, List.of(new QuestionFirst(null, "Question", List.of(
+                new Answer(null, "Correct1", true, null),
+                new Answer(null, "Correct2", true, null),
+                new Answer(null, "Correct3", true, null),
+                new Answer(null, "Correct4", true, null),
+                new Answer(null, "Correct5", true, null),
+                new Answer(null, "Correct6", true, null),
+
+                new Answer(null, "WrongL1", true, Byte.parseByte("1")),
+                new Answer(null, "WrongL1", true, Byte.parseByte("1")),
+                new Answer(null, "WrongL1", true, Byte.parseByte("1")),
+
+                new Answer(null, "WrongL2", true, Byte.parseByte("2")),
+                new Answer(null, "WrongL2", true, Byte.parseByte("2")),
+                new Answer(null, "WrongL2", true, Byte.parseByte("2")),
+
+                new Answer(null, "WrongL3", true, Byte.parseByte("3")),
+                new Answer(null, "WrongL3", true, Byte.parseByte("3")),
+                new Answer(null, "WrongL3", true, Byte.parseByte("3")),
+
+                new Answer(null, "WrongL4", true, Byte.parseByte("4")),
+                new Answer(null, "WrongL4", true, Byte.parseByte("4")),
+                new Answer(null, "WrongL4", true, Byte.parseByte("4")),
+
+                new Answer(null, "WrongL5", true, Byte.parseByte("5")),
+                new Answer(null, "WrongL5", true, Byte.parseByte("5")),
+                new Answer(null, "WrongL5", true, Byte.parseByte("5")),
+
+                new Answer(null, "WrongL3", true, Byte.parseByte("6")),
+                new Answer(null, "WrongL3", true, Byte.parseByte("6")),
+                new Answer(null, "WrongL3", true, Byte.parseByte("6"))
+        ))) /*debug*/)));
     }
 
     @GetMapping("/{id}") //Pseudo Websocket
