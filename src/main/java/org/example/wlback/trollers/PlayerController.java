@@ -24,8 +24,7 @@ public class PlayerController {
     @GetMapping("/{id}")
     public ResponseEntity<Player> getPlayer(@PathVariable Long id) {
         Optional<Player> player = playerRepository.findById(id);
-        return player.map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.notFound().build());
+        return player.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PutMapping("/{id}")
@@ -37,6 +36,26 @@ public class PlayerController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @PostMapping("/{id}")
+    public ResponseEntity<Player> setInput(@PathVariable Long id, @RequestBody String input) {
+        Optional<Player> existingPlayer = playerRepository.findById(id);
+        if (existingPlayer.isPresent()) {
+            Player player = existingPlayer.get();
+            player.setInput(input);
+            playerRepository.save(player);
+            return ResponseEntity.ok().body(player);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @DeleteMapping
+    public ResponseEntity<List<Player>> deleteInputs() {
+        List<Player> x = playerRepository.findAll();
+        x.forEach(player -> player.setInput(""));
+        return ResponseEntity.ok(playerRepository.saveAll(x));
     }
 
     @PostMapping

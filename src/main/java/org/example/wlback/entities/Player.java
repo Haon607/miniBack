@@ -13,5 +13,6 @@ public class Player {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "playerIdSequence")
     Long id;
     String name;
+    String input;
     Long totalScore;
 }
