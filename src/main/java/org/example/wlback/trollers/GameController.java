@@ -51,9 +51,9 @@ public class GameController {
                 new Answer(null, "WrongL5", true, Byte.parseByte("5")),
                 new Answer(null, "WrongL5", true, Byte.parseByte("5")),
 
-                new Answer(null, "WrongL3", true, Byte.parseByte("6")),
-                new Answer(null, "WrongL3", true, Byte.parseByte("6")),
-                new Answer(null, "WrongL3", true, Byte.parseByte("6"))
+                new Answer(null, "WrongL6", true, Byte.parseByte("6")),
+                new Answer(null, "WrongL6", true, Byte.parseByte("6")),
+                new Answer(null, "WrongL6", true, Byte.parseByte("6"))
         ))) /*debug*/)));
     }
 
