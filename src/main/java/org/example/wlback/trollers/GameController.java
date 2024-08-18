@@ -31,29 +31,29 @@ public class GameController {
                 new Answer(null, "Correct5", true, Byte.parseByte("5")),
                 new Answer(null, "Correct6", true, Byte.parseByte("6")),
 
-                new Answer(null, "WrongL1", true, Byte.parseByte("1")),
-                new Answer(null, "WrongL1", true, Byte.parseByte("1")),
-                new Answer(null, "WrongL1", true, Byte.parseByte("1")),
+                new Answer(null, "WrongL1", false, Byte.parseByte("1")),
+                new Answer(null, "WrongL1", false, Byte.parseByte("1")),
+                new Answer(null, "WrongL1", false, Byte.parseByte("1")),
 
-                new Answer(null, "WrongL2", true, Byte.parseByte("2")),
-                new Answer(null, "WrongL2", true, Byte.parseByte("2")),
-                new Answer(null, "WrongL2", true, Byte.parseByte("2")),
+                new Answer(null, "WrongL2", false, Byte.parseByte("2")),
+                new Answer(null, "WrongL2", false, Byte.parseByte("2")),
+                new Answer(null, "WrongL2", false, Byte.parseByte("2")),
 
-                new Answer(null, "WrongL3", true, Byte.parseByte("3")),
-                new Answer(null, "WrongL3", true, Byte.parseByte("3")),
-                new Answer(null, "WrongL3", true, Byte.parseByte("3")),
+                new Answer(null, "WrongL3", false, Byte.parseByte("3")),
+                new Answer(null, "WrongL3", false, Byte.parseByte("3")),
+                new Answer(null, "WrongL3", false, Byte.parseByte("3")),
 
-                new Answer(null, "WrongL4", true, Byte.parseByte("4")),
-                new Answer(null, "WrongL4", true, Byte.parseByte("4")),
-                new Answer(null, "WrongL4", true, Byte.parseByte("4")),
+                new Answer(null, "WrongL4", false, Byte.parseByte("4")),
+                new Answer(null, "WrongL4", false, Byte.parseByte("4")),
+                new Answer(null, "WrongL4", false, Byte.parseByte("4")),
 
-                new Answer(null, "WrongL5", true, Byte.parseByte("5")),
-                new Answer(null, "WrongL5", true, Byte.parseByte("5")),
-                new Answer(null, "WrongL5", true, Byte.parseByte("5")),
+                new Answer(null, "WrongL5", false, Byte.parseByte("5")),
+                new Answer(null, "WrongL5", false, Byte.parseByte("5")),
+                new Answer(null, "WrongL5", false, Byte.parseByte("5")),
 
-                new Answer(null, "WrongL6", true, Byte.parseByte("6")),
-                new Answer(null, "WrongL6", true, Byte.parseByte("6")),
-                new Answer(null, "WrongL6", true, Byte.parseByte("6"))
+                new Answer(null, "WrongL6", false, Byte.parseByte("6")),
+                new Answer(null, "WrongL6", false, Byte.parseByte("6")),
+                new Answer(null, "WrongL6", false, Byte.parseByte("6"))
         ))) /*debug*/)));
     }
 
