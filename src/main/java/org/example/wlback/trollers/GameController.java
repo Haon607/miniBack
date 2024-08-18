@@ -24,12 +24,12 @@ public class GameController {
     @PostMapping
     public ResponseEntity<Game> openGame() {
         return ResponseEntity.status(HttpStatus.CREATED).body(gameRepository.save(new Game(null, null, "/idle", null, List.of(new QuestionFirst(null, "Question", List.of(
-                new Answer(null, "Correct1", true, null),
-                new Answer(null, "Correct2", true, null),
-                new Answer(null, "Correct3", true, null),
-                new Answer(null, "Correct4", true, null),
-                new Answer(null, "Correct5", true, null),
-                new Answer(null, "Correct6", true, null),
+                new Answer(null, "Correct1", true, Byte.parseByte("1")),
+                new Answer(null, "Correct2", true, Byte.parseByte("2")),
+                new Answer(null, "Correct3", true, Byte.parseByte("3")),
+                new Answer(null, "Correct4", true, Byte.parseByte("4")),
+                new Answer(null, "Correct5", true, Byte.parseByte("5")),
+                new Answer(null, "Correct6", true, Byte.parseByte("6")),
 
                 new Answer(null, "WrongL1", true, Byte.parseByte("1")),
                 new Answer(null, "WrongL1", true, Byte.parseByte("1")),
