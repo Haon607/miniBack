@@ -1,10 +1,12 @@
 package org.example.wlback.trollers;
 
+import org.example.wlback.QuestionInit;
 import org.example.wlback.entities.Game;
 import org.example.wlback.entities.Player;
 import org.example.wlback.entities.questions.Answer;
 import org.example.wlback.entities.questions.QuestionFirst;
 import org.example.wlback.repos.GameRepository;
+import org.example.wlback.repos.QuestionFirstRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,36 +21,13 @@ public class GameController {
     @Autowired
     private GameRepository gameRepository;
     @Autowired
+    private QuestionFirstRepository questionFirstRepository;
+    @Autowired
     private PlayerController playerController;
 
     @PostMapping
     public ResponseEntity<Game> openGame() {
-        return ResponseEntity.status(HttpStatus.CREATED).body(gameRepository.save(new Game(null, null, "/idle", null, List.of(new QuestionFirst(null, "Question", List.of(
-                new Answer(null, "Correct1", true, Byte.parseByte("1")),
-                new Answer(null, "Correct2", true, Byte.parseByte("2")),
-                new Answer(null, "Correct3", true, Byte.parseByte("3")),
-                new Answer(null, "Correct4", true, Byte.parseByte("4")),
-                new Answer(null, "Correct5", true, Byte.parseByte("5")),
-                new Answer(null, "Correct6", true, Byte.parseByte("6")),
-
-                new Answer(null, "WrongL11", false, Byte.parseByte("1")),
-                new Answer(null, "WrongL12", false, Byte.parseByte("1")),
-
-                new Answer(null, "WrongL21", false, Byte.parseByte("2")),
-                new Answer(null, "WrongL22", false, Byte.parseByte("2")),
-
-                new Answer(null, "WrongL31", false, Byte.parseByte("3")),
-                new Answer(null, "WrongL32", false, Byte.parseByte("3")),
-
-                new Answer(null, "WrongL41", false, Byte.parseByte("4")),
-                new Answer(null, "WrongL42", false, Byte.parseByte("4")),
-
-                new Answer(null, "WrongL51", false, Byte.parseByte("5")),
-                new Answer(null, "WrongL52", false, Byte.parseByte("5")),
-
-                new Answer(null, "WrongL61", false, Byte.parseByte("6")),
-                new Answer(null, "WrongL62", false, Byte.parseByte("6"))
-        ))) /*debug*/)));
+        return ResponseEntity.status(HttpStatus.CREATED).body(gameRepository.save(new Game(null, null, "/idle", null, null)));
     }
 
     @GetMapping("/{id}") //Pseudo Websocket
@@ -72,5 +51,22 @@ public class GameController {
         game.setData(route_data[1]);
         gameRepository.save(game);
         return ResponseEntity.ok(game);
+    }
+
+    @PostMapping("/{id}/questions")
+    public ResponseEntity<Game> addQuestions(@PathVariable Long id) {
+        Game game = gameRepository.findById(id).orElseThrow();
+        List<QuestionFirst> questionFirsts = questionFirstRepository.findAll();
+        game.setQuestionFirsts(questionFirsts);
+        gameRepository.save(game);
+        return ResponseEntity.ok(game);
+    }
+
+    @PostMapping("/initquestions")
+    public ResponseEntity<Void> initQuestions() {
+        this.gameRepository.deleteAll();
+        this.questionFirstRepository.deleteAll();
+        this.questionFirstRepository.saveAll(QuestionInit.initQuestionFirsts());
+        return ResponseEntity.ok(null);
     }
 }
