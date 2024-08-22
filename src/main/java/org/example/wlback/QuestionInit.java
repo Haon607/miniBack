@@ -1,7 +1,9 @@
 package org.example.wlback;
 
 import org.example.wlback.entities.questions.Answer;
+import org.example.wlback.entities.questions.Connection;
 import org.example.wlback.entities.questions.QuestionFirst;
+import org.example.wlback.entities.questions.QuestionSecond;
 
 import java.util.List;
 
@@ -32,7 +34,7 @@ public class QuestionInit {
                         new Answer(null, "Magari", true, Byte.parseByte("6")),
                         new Answer(null, "Banis", false, Byte.parseByte("6")),
                         new Answer(null, "Villapaita", false, Byte.parseByte("6"))
-                        )),
+                )),
 
 
                 new QuestionFirst(null, "Wähle ein IKEA-Produkt", List.of(
@@ -167,6 +169,47 @@ public class QuestionInit {
                         new Answer(null, "Magari", true, Byte.parseByte("6")),
                         new Answer(null, "Banis", false, Byte.parseByte("6")),
                         new Answer(null, "Villapaita", false, Byte.parseByte("6"))
+                ))
+        );
+    }
+
+    public static List<QuestionSecond> initQuestionSeconds() {
+        return List.of(
+                new QuestionSecond(null, List.of(
+                        new Answer(null, "a0", true, Byte.parseByte("0")),
+                        new Answer(null, "b0", true, Byte.parseByte("0")),
+                        new Answer(null, "c0", true, Byte.parseByte("0")),
+                        new Answer(null, "d0", true, Byte.parseByte("0")),
+                        new Answer(null, "a1", true, Byte.parseByte("1")),
+                        new Answer(null, "b1", true, Byte.parseByte("1")),
+                        new Answer(null, "c1", true, Byte.parseByte("1")),
+                        new Answer(null, "d1", true, Byte.parseByte("1")),
+                        new Answer(null, "a2", true, Byte.parseByte("2")),
+                        new Answer(null, "b2", true, Byte.parseByte("2")),
+                        new Answer(null, "c2", true, Byte.parseByte("2")),
+                        new Answer(null, "d2", true, Byte.parseByte("2")),
+                        new Answer(null, "a3", true, Byte.parseByte("3")),
+                        new Answer(null, "b3", true, Byte.parseByte("3")),
+                        new Answer(null, "c3", true, Byte.parseByte("3")),
+                        new Answer(null, "d3", true, Byte.parseByte("3")),
+                        new Answer(null, "a4", true, Byte.parseByte("4")),
+                        new Answer(null, "b4", true, Byte.parseByte("4")),
+                        new Answer(null, "c4", true, Byte.parseByte("4")),
+                        new Answer(null, "d4", true, Byte.parseByte("4")),
+                        new Answer(null, "aFLASE", false, Byte.parseByte("-1")),
+                        new Answer(null, "bFLASE", false, Byte.parseByte("-1")),
+                        new Answer(null, "cFLASE", false, Byte.parseByte("-1")),
+                        new Answer(null, "dFLASE", false, Byte.parseByte("-1")),
+                        new Answer(null, "eFLASE", false, Byte.parseByte("-1")),
+                        new Answer(null, "fFLASE", false, Byte.parseByte("-1")),
+                        new Answer(null, "gFLASE", false, Byte.parseByte("-1")),
+                        new Answer(null, "hFLASE", false, Byte.parseByte("-1"))
+                ), List.of(
+                        new Connection(null, "Ex0", Byte.parseByte("0")),
+                        new Connection(null, "Ex1", Byte.parseByte("1")),
+                        new Connection(null, "Ex2", Byte.parseByte("2")),
+                        new Connection(null, "Ex3", Byte.parseByte("3")),
+                        new Connection(null, "Ex4", Byte.parseByte("4"))
                 ))
         );
     }

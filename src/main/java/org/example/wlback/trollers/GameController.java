@@ -5,8 +5,10 @@ import org.example.wlback.entities.Game;
 import org.example.wlback.entities.Player;
 import org.example.wlback.entities.questions.Answer;
 import org.example.wlback.entities.questions.QuestionFirst;
+import org.example.wlback.entities.questions.QuestionSecond;
 import org.example.wlback.repos.GameRepository;
 import org.example.wlback.repos.QuestionFirstRepository;
+import org.example.wlback.repos.QuestionSecondRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,11 +25,13 @@ public class GameController {
     @Autowired
     private QuestionFirstRepository questionFirstRepository;
     @Autowired
+    private QuestionSecondRepository questionSecondRepository;
+    @Autowired
     private PlayerController playerController;
 
     @PostMapping
     public ResponseEntity<Game> openGame() {
-        return ResponseEntity.status(HttpStatus.CREATED).body(gameRepository.save(new Game(null, null, "/idle", null, null)));
+        return ResponseEntity.status(HttpStatus.CREATED).body(gameRepository.save(new Game(null, null, "/idle", null, null, null)));
     }
 
     @GetMapping("/{id}") //Pseudo Websocket
@@ -57,7 +61,9 @@ public class GameController {
     public ResponseEntity<Game> addQuestions(@PathVariable Long id) {
         Game game = gameRepository.findById(id).orElseThrow();
         List<QuestionFirst> questionFirsts = questionFirstRepository.findAll();
+        List<QuestionSecond> questionSeconds = questionSecondRepository.findAll();
         game.setQuestionFirsts(questionFirsts);
+        game.setQuestionSecond(questionSeconds.getFirst());
         gameRepository.save(game);
         return ResponseEntity.ok(game);
     }
@@ -67,6 +73,8 @@ public class GameController {
         this.gameRepository.deleteAll();
         this.questionFirstRepository.deleteAll();
         this.questionFirstRepository.saveAll(QuestionInit.initQuestionFirsts());
+        this.questionSecondRepository.deleteAll();
+        this.questionSecondRepository.saveAll(QuestionInit.initQuestionSeconds());
         return ResponseEntity.ok(null);
     }
 }

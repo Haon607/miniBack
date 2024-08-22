@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.wlback.entities.questions.QuestionFirst;
+import org.example.wlback.entities.questions.QuestionSecond;
 
 import java.util.List;
 
@@ -22,4 +23,6 @@ public class Game {
     String data;
     @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     List<QuestionFirst> questionFirsts;
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    QuestionSecond questionSecond;
 }

@@ -18,5 +18,5 @@ public class Answer {
     Long id;
     String answer;
     Boolean isCorrect;
-    Byte likely;
+    Byte groupNumber;
 }
