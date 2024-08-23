@@ -58,6 +58,19 @@ public class PlayerController {
         return ResponseEntity.ok(playerRepository.saveAll(x));
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Player> deleteInput(@PathVariable Long id) {
+        Optional<Player> existingPlayer = playerRepository.findById(id);
+        if (existingPlayer.isPresent()) {
+            Player player = existingPlayer.get();
+            player.setInput("");
+            playerRepository.save(player);
+            return ResponseEntity.ok().body(player);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
     @PostMapping
     public ResponseEntity<Player> createPlayer(@RequestBody Player player) {
         return ResponseEntity.ok().body(playerRepository.save(player));
