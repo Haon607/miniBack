@@ -175,41 +175,46 @@ public class QuestionInit {
 
     public static List<QuestionSecond> initQuestionSeconds() {
         return List.of(
-                new QuestionSecond(null, List.of(
-                        new Answer(null, "a0", true, Byte.parseByte("0")),
-                        new Answer(null, "b0", true, Byte.parseByte("0")),
-                        new Answer(null, "c0", true, Byte.parseByte("0")),
-                        new Answer(null, "d0", true, Byte.parseByte("0")),
-                        new Answer(null, "a1", true, Byte.parseByte("1")),
-                        new Answer(null, "b1", true, Byte.parseByte("1")),
-                        new Answer(null, "c1", true, Byte.parseByte("1")),
-                        new Answer(null, "d1", true, Byte.parseByte("1")),
-                        new Answer(null, "a2", true, Byte.parseByte("2")),
-                        new Answer(null, "b2", true, Byte.parseByte("2")),
-                        new Answer(null, "c2", true, Byte.parseByte("2")),
-                        new Answer(null, "d2", true, Byte.parseByte("2")),
-                        new Answer(null, "a3", true, Byte.parseByte("3")),
-                        new Answer(null, "b3", true, Byte.parseByte("3")),
-                        new Answer(null, "c3", true, Byte.parseByte("3")),
-                        new Answer(null, "d3", true, Byte.parseByte("3")),
-                        new Answer(null, "a4", true, Byte.parseByte("4")),
-                        new Answer(null, "b4", true, Byte.parseByte("4")),
-                        new Answer(null, "c4", true, Byte.parseByte("4")),
-                        new Answer(null, "d4", true, Byte.parseByte("4")),
-                        new Answer(null, "aFLASE", false, Byte.parseByte("-1")),
-                        new Answer(null, "bFLASE", false, Byte.parseByte("-1")),
-                        new Answer(null, "cFLASE", false, Byte.parseByte("-1")),
-                        new Answer(null, "dFLASE", false, Byte.parseByte("-1")),
-                        new Answer(null, "eFLASE", false, Byte.parseByte("-1")),
-                        new Answer(null, "fFLASE", false, Byte.parseByte("-1")),
-                        new Answer(null, "gFLASE", false, Byte.parseByte("-1")),
-                        new Answer(null, "hFLASE", false, Byte.parseByte("-1"))
+                new QuestionSecond(null, List.of( //THINGS
+                        new Answer(null, "NÄH", true, Byte.parseByte("0")),
+                        new Answer(null, "FLUG", true, Byte.parseByte("0")),
+                        new Answer(null, "BOHR", true, Byte.parseByte("0")),
+                        new Answer(null, "KAFFEE", true, Byte.parseByte("0")),
+
+                        new Answer(null, "BÄLLE", true, Byte.parseByte("1")),
+                        new Answer(null, "EIS", true, Byte.parseByte("1")),
+                        new Answer(null, "FREI", true, Byte.parseByte("1")),
+                        new Answer(null, "PFLEGE", true, Byte.parseByte("1")),
+
+                        new Answer(null, "AUS", true, Byte.parseByte("2")),
+                        new Answer(null, "BILD", true, Byte.parseByte("2")),
+                        new Answer(null, "DACH", true, Byte.parseByte("2")),
+                        new Answer(null, "ARM", true, Byte.parseByte("2")),
+
+                        new Answer(null, "BILLARD", true, Byte.parseByte("3")),
+                        new Answer(null, "FUSSBALL", true, Byte.parseByte("3")),
+                        new Answer(null, "CRICKET", true, Byte.parseByte("3")),
+                        new Answer(null, "TENNIS", true, Byte.parseByte("3")),
+
+                        new Answer(null, "KROKET", true, Byte.parseByte("4")),
+                        new Answer(null, "KUNSTREITEN", true, Byte.parseByte("4")),
+                        new Answer(null, "POLO", true, Byte.parseByte("4")),
+                        new Answer(null, "TAUZIEHEN", true, Byte.parseByte("4")),
+
+                        new Answer(null, "SCHACH", false, Byte.parseByte("-1")),
+                        new Answer(null, "PHILLIPS", false, Byte.parseByte("-1")),
+                        new Answer(null, "TEE", false, Byte.parseByte("-1")),
+                        new Answer(null, "GLAS", false, Byte.parseByte("-1")),
+                        new Answer(null, "WALTER", false, Byte.parseByte("-1")),
+                        new Answer(null, "CREME", false, Byte.parseByte("-1")),
+                        new Answer(null, "BERG", false, Byte.parseByte("-1")),
+                        new Answer(null, "ICE HOCKEY", false, Byte.parseByte("-1"))
                 ), List.of(
-                        new Connection(null, "Ex0", Byte.parseByte("0")),
-                        new Connection(null, "Ex1", Byte.parseByte("1")),
-                        new Connection(null, "Ex2", Byte.parseByte("2")),
-                        new Connection(null, "Ex3", Byte.parseByte("3")),
-                        new Connection(null, "Ex4", Byte.parseByte("4"))
+                        new Connection(null, "Kann auf ...MASCHIENE enden", Byte.parseByte("0")),
+                        new Connection(null, "Kann auf ...BAD enden", Byte.parseByte("1")),
+                        new Connection(null, "Kann mit VOR... beginnen", Byte.parseByte("2")),
+                        new Connection(null, "Ballsportarten", Byte.parseByte("3")),
+                        new Connection(null, "Nicht mehr olympische Disziplinen", Byte.parseByte("4"))
                 ))
         );
     }
