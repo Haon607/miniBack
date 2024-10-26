@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.example</groupId>
-    <artifactId>wlBack</artifactId>
+    <artifactId>miniBack</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>wlBack</name>
     <description>wlBack</description>

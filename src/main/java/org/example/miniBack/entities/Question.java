@@ -1,4 +1,4 @@
-package org.example.wlback.entities.questions;
+package org.example.miniBack.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,11 +12,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Answer {
+public class Question {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "answerIdSequence")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "questionIdSequence")
     Long id;
-    String answer;
-    Boolean isCorrect;
-    Byte groupNumber;
+    String data;
+    String round;
 }

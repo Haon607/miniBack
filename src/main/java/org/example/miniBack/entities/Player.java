@@ -1,4 +1,4 @@
-package org.example.wlback.entities;
+package org.example.miniBack.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

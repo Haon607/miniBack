@@ -1,4 +1,4 @@
-package org.example.wlback;
+package org.example.miniBack;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

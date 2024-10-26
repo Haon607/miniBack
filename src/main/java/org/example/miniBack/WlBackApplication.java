@@ -1,4 +1,4 @@
-package org.example.wlback;
+package org.example.miniBack;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

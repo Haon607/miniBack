@@ -1,4 +1,4 @@
-package org.example.wlback.entities.questions;
+package org.example.miniBack.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -11,11 +11,12 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class QuestionFirst {
+public class Round {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "questionFirstIdSequence")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "roundIdSequence")
     Long id;
-    String question;
+    String name;
+    String rules;
     @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    List<Answer> answers;
+    List<Question> questions;
 }

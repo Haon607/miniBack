@@ -1,7 +1,7 @@
-package org.example.wlback.trollers;
+package org.example.miniBack.trollers;
 
-import org.example.wlback.entities.Player;
-import org.example.wlback.repos.PlayerRepository;
+import org.example.miniBack.entities.Player;
+import org.example.miniBack.repos.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;

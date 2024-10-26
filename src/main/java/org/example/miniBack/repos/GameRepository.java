@@ -1,6 +1,6 @@
-package org.example.wlback.repos;
+package org.example.miniBack.repos;
 
-import org.example.wlback.entities.Game;
+import org.example.miniBack.entities.Game;
 import org.springframework.data.repository.ListCrudRepository;
 import org.springframework.stereotype.Repository;
 
