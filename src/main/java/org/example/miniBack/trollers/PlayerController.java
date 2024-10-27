@@ -27,7 +27,7 @@ public class PlayerController {
         return player.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @PutMapping("/{id}")
+/*    @PutMapping("/{id}")
     public ResponseEntity<Player> updatePlayer(@PathVariable Long id, @RequestBody Player player) {
         Optional<Player> existingPlayer = playerRepository.findById(id);
         if (existingPlayer.isPresent()) {
@@ -36,7 +36,7 @@ public class PlayerController {
         } else {
             return ResponseEntity.notFound().build();
         }
-    }
+    }*/
 
     @PostMapping("/{id}")
     public ResponseEntity<Player> setInput(@PathVariable Long id, @RequestBody String input) {
@@ -44,6 +44,19 @@ public class PlayerController {
         if (existingPlayer.isPresent()) {
             Player player = existingPlayer.get();
             player.setInput(input);
+            playerRepository.save(player);
+            return ResponseEntity.ok().body(player);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Player> setColor(@PathVariable Long id, @RequestBody String color) {
+        Optional<Player> existingPlayer = playerRepository.findById(id);
+        if (existingPlayer.isPresent()) {
+            Player player = existingPlayer.get();
+            player.setColor(color);
             playerRepository.save(player);
             return ResponseEntity.ok().body(player);
         } else {

@@ -14,5 +14,6 @@ public class Player {
     Long id;
     String name;
     String input;
+    String color;
     Long totalScore;
 }
