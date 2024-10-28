@@ -58,11 +58,10 @@ public class GameController {
         Game game = gameRepository.findById(id).orElseThrow();
 
         List<Round> rounds = new ArrayList<>();
-
         List<Round> allRound = roundRepository.findAll();
 
-        List<Round> smallRounds = allRound.stream().filter(round -> !round.getLarge()).toList();
-        List<Round> largeRounds = allRound.stream().filter(Round::getLarge).toList();
+        List<Round> smallRounds = new ArrayList<>(allRound.stream().filter(round -> !round.getLarge()).toList());
+        List<Round> largeRounds = new ArrayList<>(allRound.stream().filter(Round::getLarge).toList());
 
         Collections.shuffle(smallRounds);
         Collections.shuffle(largeRounds);
