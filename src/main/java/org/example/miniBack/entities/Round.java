@@ -17,6 +17,7 @@ public class Round {
     Long id;
     String name;
     String rules;
+    Boolean large;
     @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     List<Question> questions;
 }

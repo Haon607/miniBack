@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -52,17 +53,31 @@ public class GameController {
         return ResponseEntity.ok(game);
     }
 
-    @PostMapping("/{id}/rounds/{amount}")
-    public ResponseEntity<Game> addRound(@PathVariable Long id, @PathVariable Integer amount) {
+    @PostMapping("/{id}/rounds/{amount}/{amountLargeRounds}")
+    public ResponseEntity<Game> addRound(@PathVariable Long id, @PathVariable Integer amount, @PathVariable Integer amountLargeRounds) {
         Game game = gameRepository.findById(id).orElseThrow();
 
-        List<Round> rounds;
+        List<Round> rounds = new ArrayList<>();
 
         List<Round> allRound = roundRepository.findAll();
 
-        Collections.shuffle(allRound);
+        List<Round> smallRounds = allRound.stream().filter(round -> !round.getLarge()).toList();
+        List<Round> largeRounds = allRound.stream().filter(Round::getLarge).toList();
 
-        rounds = allRound.subList(0, amount);
+        Collections.shuffle(smallRounds);
+        Collections.shuffle(largeRounds);
+
+        for (int i = 0; i < amountLargeRounds; i++) {
+            rounds.add(largeRounds.getFirst());
+            largeRounds.removeFirst();
+        }
+        for (int i = rounds.size(); i < amount-1; i++) {
+            rounds.add(smallRounds.getFirst());
+            smallRounds.removeFirst();
+        }
+
+        Collections.shuffle(rounds);
+        rounds.addFirst(smallRounds.getFirst());
 
         game.setRounds(rounds);
 
