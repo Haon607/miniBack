@@ -53,12 +53,17 @@ public class GameController {
         return ResponseEntity.ok(game);
     }
 
-    @PostMapping("/{id}/rounds/{amount}/{amountLargeRounds}")
-    public ResponseEntity<Game> addRound(@PathVariable Long id, @PathVariable Integer amount, @PathVariable Integer amountLargeRounds) {
+    @PostMapping("/{id}/rounds/{playerCount}/{gameAmount}/{amountLargeRounds}")
+    public ResponseEntity<Game> addRound(@PathVariable Long id, @PathVariable Integer playerCount, @PathVariable Integer gameAmount, @PathVariable Integer amountLargeRounds) {
         Game game = gameRepository.findById(id).orElseThrow();
 
         List<Round> rounds = new ArrayList<>();
         List<Round> allRound = roundRepository.findAll();
+
+        allRound = allRound.stream().filter(round ->
+                (round.getMinPlayerCount() == null || playerCount >= round.getMinPlayerCount()) &&
+                (round.getMaxPlayerCount() == null || playerCount <= round.getMaxPlayerCount()))
+                .toList();
 
         List<Round> smallRounds = new ArrayList<>(allRound.stream().filter(round -> !round.getLarge()).toList());
         List<Round> largeRounds = new ArrayList<>(allRound.stream().filter(Round::getLarge).toList());
@@ -70,7 +75,7 @@ public class GameController {
             rounds.add(largeRounds.getFirst());
             largeRounds.removeFirst();
         }
-        for (int i = rounds.size(); i < amount-1; i++) {
+        for (int i = rounds.size(); i < gameAmount -1; i++) {
             rounds.add(smallRounds.getFirst());
             smallRounds.removeFirst();
         }

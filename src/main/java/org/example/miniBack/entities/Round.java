@@ -19,6 +19,8 @@ public class Round {
     String rules;
     String route;
     Boolean large;
+    Integer minPlayerCount;
+    Integer maxPlayerCount;
     @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     List<Question> questions;
 }
