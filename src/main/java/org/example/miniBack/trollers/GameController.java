@@ -96,7 +96,7 @@ public class GameController {
         roundRepository.deleteAll();
         return ResponseEntity.ok(roundRepository.saveAll(
                 List.of(
-                        new Round(null, "TRIVIAL PURSUIT: Wissenschaft und Technik", "Beantworte fünf Fragen in der Kategorie Wissenschaft und Technik. Jede Richtige Antwort gibt 2 Punkte.", "simple", false, null, null, List.of(
+                        new Round(null, "Einfach: Wissenschaft und Technik", "Beantworte fünf Fragen in der Kategorie Wissenschaft und Technik. Jede Richtige Antwort gibt 2 Punkte.", "simple", false, null, null, List.of(
                                 new Question(null, "Was ist die Einheit der elektrischen Induktivität?§Henry;Mho;Lumen;Volt"),
                                 new Question(null, "Test§1;2;3;4"),
                                 new Question(null, "Test§1;2;3;4"),
@@ -105,11 +105,46 @@ public class GameController {
                                 new Question(null, "Test§1;2;3;4"),
                                 new Question(null, "Test§1;2;3;4")
                         ), "#4fa626"),
-                        new Round(null, "TRIVIAL PURSUIT: Geschichte", "Beantworte fünf Fragen in der Kategorie Geschichte. Jede Richtige Antwort gibt 2 Punkte.", "simple", false, null, null, null, "#f49515"),
-                        new Round(null, "TRIVIAL PURSUIT: Sport und Freizeit", "Beantworte fünf Fragen in der Kategorie Sport und Freizeit. Jede Richtige Antwort gibt 2 Punkte.", "simple", false, null, null, null, "#f49515"),
-                        new Round(null, "TRIVIAL PURSUIT: Geografie", "Beantworte fünf Fragen in der Kategorie Geografie. Jede Richtige Antwort gibt 2 Punkte.", "simple", false, null, null, null, "#018fce"),
-                        new Round(null, "TRIVIAL PURSUIT: Unterhaltung", "Beantworte fünf Fragen in der Kategorie Unterhaltung. Jede Richtige Antwort gibt 2 Punkte.", "simple", false, null, null, null, "#d20377"),
-                        new Round(null, "TRIVIAL PURSUIT: Kunst und Literatur", "Beantworte fünf Fragen in der Kategorie Kunst und Literatur. Jede Richtige Antwort gibt 2 Punkte.", "simple", false, null, null, null, "#8d338d")
+                        new Round(null, "Einfach: Geschichte", "Beantworte fünf Fragen in der Kategorie Geschichte. Jede Richtige Antwort gibt 2 Punkte.", "simple", false, null, null, List.of(
+                                new Question(null, "Test§1;2;3;4"),
+                                new Question(null, "Test§1;2;3;4"),
+                                new Question(null, "Test§1;2;3;4"),
+                                new Question(null, "Test§1;2;3;4"),
+                                new Question(null, "Test§1;2;3;4"),
+                                new Question(null, "Test§1;2;3;4")
+                        ), "#f49515"),
+                        new Round(null, "Einfach: Sport und Freizeit", "Beantworte fünf Fragen in der Kategorie Sport und Freizeit. Jede Richtige Antwort gibt 2 Punkte.", "simple", false, null, null, List.of(
+                                new Question(null, "Test§1;2;3;4"),
+                                new Question(null, "Test§1;2;3;4"),
+                                new Question(null, "Test§1;2;3;4"),
+                                new Question(null, "Test§1;2;3;4"),
+                                new Question(null, "Test§1;2;3;4"),
+                                new Question(null, "Test§1;2;3;4")
+                        ), "#f49515"),
+                        new Round(null, "Einfach: Geografie", "Beantworte fünf Fragen in der Kategorie Geografie. Jede Richtige Antwort gibt 2 Punkte.", "simple", false, null, null, List.of(
+                                new Question(null, "Test§1;2;3;4"),
+                                new Question(null, "Test§1;2;3;4"),
+                                new Question(null, "Test§1;2;3;4"),
+                                new Question(null, "Test§1;2;3;4"),
+                                new Question(null, "Test§1;2;3;4"),
+                                new Question(null, "Test§1;2;3;4")
+                        ), "#018fce"),
+                        new Round(null, "Einfach: Unterhaltung", "Beantworte fünf Fragen in der Kategorie Unterhaltung. Jede Richtige Antwort gibt 2 Punkte.", "simple", false, null, null, List.of(
+                                new Question(null, "Test§1;2;3;4"),
+                                new Question(null, "Test§1;2;3;4"),
+                                new Question(null, "Test§1;2;3;4"),
+                                new Question(null, "Test§1;2;3;4"),
+                                new Question(null, "Test§1;2;3;4"),
+                                new Question(null, "Test§1;2;3;4")
+                        ), "#d20377"),
+                        new Round(null, "Einfach: Kunst und Literatur", "Beantworte fünf Fragen in der Kategorie Kunst und Literatur. Jede Richtige Antwort gibt 2 Punkte.", "simple", false, null, null, List.of(
+                                new Question(null, "Test§1;2;3;4"),
+                                new Question(null, "Test§1;2;3;4"),
+                                new Question(null, "Test§1;2;3;4"),
+                                new Question(null, "Test§1;2;3;4"),
+                                new Question(null, "Test§1;2;3;4"),
+                                new Question(null, "Test§1;2;3;4")
+                        ), "#8d338d")
                 )
         ));
     }
