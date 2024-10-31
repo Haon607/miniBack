@@ -61,8 +61,8 @@ public class GameController {
         List<Round> allRound = roundRepository.findAll();
 
         allRound = allRound.stream().filter(round ->
-                (round.getMinPlayerCount() == null || playerCount >= round.getMinPlayerCount()) &&
-                (round.getMaxPlayerCount() == null || playerCount <= round.getMaxPlayerCount()))
+                        (round.getMinPlayerCount() == null || playerCount >= round.getMinPlayerCount()) &&
+                                (round.getMaxPlayerCount() == null || playerCount <= round.getMaxPlayerCount()))
                 .toList();
 
         List<Round> smallRounds = new ArrayList<>(allRound.stream().filter(round -> !round.getLarge()).toList());
@@ -75,7 +75,7 @@ public class GameController {
             rounds.add(largeRounds.getFirst());
             largeRounds.removeFirst();
         }
-        for (int i = rounds.size(); i < gameAmount -1; i++) {
+        for (int i = rounds.size(); i < gameAmount - 1; i++) {
             rounds.add(smallRounds.getFirst());
             smallRounds.removeFirst();
         }
@@ -87,5 +87,19 @@ public class GameController {
 
         gameRepository.save(game);
         return ResponseEntity.ok(game);
+    }
+
+    @PostMapping("/initrounds")
+    public ResponseEntity<List<Round>> initRounds() {
+        gameRepository.deleteAll();
+        roundRepository.deleteAll();
+        return ResponseEntity.ok(roundRepository.saveAll(
+                List.of(
+                        new Round(null, "TestRunde1", "Test", "", false, null, null, null),
+                        new Round(null, "TestRunde2", "Test", "", false, null, null, null),
+                        new Round(null, "TestRunde3", "Test", "", true, null, null, null),
+                        new Round(null, "TestRunde4", "Test", "", true, null, null, null)
+                )
+        ));
     }
 }
