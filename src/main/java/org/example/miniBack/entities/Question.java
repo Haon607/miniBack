@@ -17,5 +17,4 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "questionIdSequence")
     Long id;
     String data;
-    String round;
 }

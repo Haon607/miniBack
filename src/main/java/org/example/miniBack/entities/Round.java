@@ -23,4 +23,5 @@ public class Round {
     Integer maxPlayerCount;
     @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     List<Question> questions;
+    String data;
 }
