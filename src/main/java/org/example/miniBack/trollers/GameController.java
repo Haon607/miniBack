@@ -112,7 +112,7 @@ public class GameController {
                                 new Question(null, "Test§1;2;3;4"),
                                 new Question(null, "Test§1;2;3;4"),
                                 new Question(null, "Test§1;2;3;4")
-                        ), "#f49515"),
+                        ), "#fedf01"),
                         new Round(null, "Einfach: Sport und Freizeit", "Beantworte fünf Fragen in der Kategorie Sport und Freizeit. Jede Richtige Antwort gibt 2 Punkte.", "simple", false, null, null, List.of(
                                 new Question(null, "Test§1;2;3;4"),
                                 new Question(null, "Test§1;2;3;4"),
