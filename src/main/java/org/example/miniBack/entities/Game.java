@@ -18,6 +18,7 @@ public class Game {
     @ManyToMany(fetch = FetchType.EAGER)
     List<Player> players;
     String route;
+    @Column(length = 10000)
     String data;
     @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     List<Round> rounds;

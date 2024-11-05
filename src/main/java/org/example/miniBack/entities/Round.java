@@ -16,6 +16,7 @@ public class Round {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "roundIdSequence")
     Long id;
     String name;
+    @Column(length = 10000)
     String rules;
     String route;
     Boolean large;

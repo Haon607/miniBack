@@ -292,7 +292,9 @@ public class GameController {
                                 new Question(null, "Wer schrieb 'Hundert Jahre Einsamkeit'?§Gabriel García Márquez;Mario Vargas Llosa;Pablo Neruda;Julio Cortázar"),
                                 new Question(null, "Welcher Künstler ist bekannt für seine Blau-Periode?§Pablo Picasso;Henri Matisse;Georges Braque;Joan Miró"),
                                 new Question(null, "Welcher italienische Dichter schrieb 'Das Decamerone'?§Giovanni Boccaccio;Dante Alighieri;Francesco Petrarca;Niccolò Machiavelli")
-                        ), "#8d338d")
+                        ), "#8d338d"),
+
+                        new Round(null, "Sound Memory", "Wir spielen Simon Says, aber anstatt das die Reihenfolge auf einem Gerät ist, verteilt sie sich hier auf alle Geräte. Alle Geräte spielen nacheinander einen Ton. Die Aufgabe: Tippe im Anschluss auf die Spieler, von denen die Töne kamen. Wichtig dabei ist, dass die Reihenfolge der Töne beibehalten wird. Für jede richtige Sequenz gibt es einen Punkt und wir spielen solange, bis niemand eine Reihenfolge nachstellen kann (oder 10 runden).", "sounds", false, 2, 20, null, "")
 
                 )
         ));
