@@ -39,7 +39,10 @@ public class PlayerController {
     }*/
 
     @PostMapping("/{id}")
-    public ResponseEntity<Player> setInput(@PathVariable Long id, @RequestBody String input) {
+    public ResponseEntity<Player> setInput(@PathVariable Long id, @RequestBody(required = false) String input) {
+        if (input == null) {
+            input = "";
+        }
         Optional<Player> existingPlayer = playerRepository.findById(id);
         if (existingPlayer.isPresent()) {
             Player player = existingPlayer.get();
