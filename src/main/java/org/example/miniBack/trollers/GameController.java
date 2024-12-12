@@ -310,7 +310,7 @@ public class GameController {
                                         "connect4", false, null, null, List.of(
                                         //ANSWER TEXT;GROUP NUMBER§...|FALSCHE ANTWORT;...|EXPLAINER CONNECTION;GROUP NUMBER§...
                                         new Question(null,
-                                                "NÄH;0§FLUG;0§BOHR;0§KAFFEE;0§BÄLLE;1§EIS;1§FREI;1§PFLEGE;1§AUS;2§BILD;2§DACH;2§ARM;2§BILLARD;3§FUSSBALL;3§CRICKET;3§TENNIS;3§KROKET;4§KUNSTREITEN;4§POLO;4§TAUZIEHEN;4|SCHACH;PHILLIPS;TEE;GLAS;WALTER;CREME;BERG;ICE HOCKEY;-1|Kann auf ...MASCHIENE enden;0§Kann auf ...BAD enden;1§Kann mit VOR... beginnen;2§Ballsportarten;3§Nicht mehr olympische Disziplinen;4\n")
+                                                "NÄH;0§FLUG;0§BOHR;0§KAFFEE;0§BÄLLE;1§EIS;1§FREI;1§PFLEGE;1§AUS;2§BILD;2§DACH;2§ARM;2§BILLARD;3§FUSSBALL;3§CRICKET;3§TENNIS;3§KROKET;4§KUNSTREITEN;4§POLO;4§TAUZIEHEN;4|SCHACH;PHILLIPS;TEE;GLAS;WALTER;CREME;BERG;ICE HOCKEY|Kann auf ...MASCHIENE enden;0§Kann auf ...BAD enden;1§Kann mit VOR... beginnen;2§Ballsportarten;3§Nicht mehr olympische Disziplinen;4\n")
                                 ), "")
                         )
                 )
