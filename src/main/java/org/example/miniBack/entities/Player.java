@@ -1,9 +1,6 @@
 package org.example.miniBack.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -13,6 +10,7 @@ public class Player {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "playerIdSequence")
     Long id;
     String name;
+    @Column(length = 10000)
     String input;
     String color;
     Long totalScore;
